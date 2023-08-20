@@ -1,0 +1,32 @@
+{
+    "name": "tax-calculator",
+    "version": "1.0.0",
+    "description": "Take home assignment for Senior Frontend Engineer role ",
+    "main": "src/index.js",
+    "author": "Hemang Thakkar",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "start": "webpack-dev-server",
+        "build": "rimraf build && webpack",
+        "prettier": "prettier --write ."
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^5.1.6"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.20",
+        "@types/react-dom": "^18.2.7",
+        "html-webpack-plugin": "^5.5.3",
+        "prettier": "^3.0.2",
+        "rimraf": "^5.0.1",
+        "ts-loader": "^9.4.4",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
+}

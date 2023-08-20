@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": ["ESNext", "DOM", "dom.iterable"],
+        "module": "ESNext",
+        "moduleResolution": "NodeNext",
+        "jsx": "react",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true
+    },
+    "include": ["src/**/*"]
+}
