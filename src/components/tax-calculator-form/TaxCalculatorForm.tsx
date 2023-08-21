@@ -1,5 +1,5 @@
 import React, { FormEvent, FormEventHandler } from 'react';
-import { TextInput } from '../text-input/TextInput';
+import TextInput from '../text-input/TextInput';
 import styled from '@emotion/styled';
 
 export interface OnSubmitArgs {
@@ -43,9 +43,7 @@ export const TaxCalculatorForm: React.FC<TaxCalculatorFormProps> = ({
         }
     };
 
-    const onResetHandler: FormEventHandler<HTMLFormElement> = (
-        e: FormEvent<HTMLFormElement>
-    ) => {
+    const onResetHandler: FormEventHandler<HTMLFormElement> = () => {
         onReset();
     };
 

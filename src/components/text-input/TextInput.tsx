@@ -6,7 +6,7 @@ type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     ref?: React.RefObject<HTMLInputElement>;
 };
 
-export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
+const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     ({ label, ...rest }, ref) => {
         return (
             <InputLabel label={label}>
@@ -15,3 +15,6 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         );
     }
 );
+
+TextInput.displayName = "TextInput";
+export default TextInput;
