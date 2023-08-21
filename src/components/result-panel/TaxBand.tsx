@@ -3,7 +3,7 @@ import { TaxBracketWithTax } from '../../data/model';
 import styled from '@emotion/styled';
 import { getCurrencyFormatter } from '../../utils/calculationMethods';
 
-type TaxBandProps = TaxBracketWithTax;
+type TaxBandProps = TaxBracketWithTax & { testId: string };
 
 const Container = styled.div(() => ({
     flex: 1,
@@ -12,15 +12,15 @@ const Container = styled.div(() => ({
     alignItems: 'center',
 }));
 
-export const TaxBand: React.FC<TaxBandProps> = ({ min, max, tax }) => {
+export const TaxBand: React.FC<TaxBandProps> = ({ min, max, tax, testId }) => {
     const currencyFormatter = getCurrencyFormatter();
 
     const bandTitle = max
         ? `${currencyFormatter.format(min)} - ${currencyFormatter.format(max)}`
-        : `${currencyFormatter.format(min)}`;
+        : `> ${currencyFormatter.format(min)}`;
 
     return (
-        <Container>
+        <Container data-testid={testId}>
             <p>{bandTitle}</p>
             <p>{`${currencyFormatter.format(tax)}`}</p>
         </Container>

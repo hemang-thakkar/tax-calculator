@@ -1,13 +1,6 @@
 import React, { FormEvent, FormEventHandler } from 'react';
 import { TextInput } from '../text-input/TextInput';
-import { SelectInput, SelectOption } from '../select-input/SelectInput';
-import { TAX_YEAR_OPTIONS } from '../../utils/constants';
 import styled from '@emotion/styled';
-
-const PLACEHOLDER_OPTION: SelectOption = {
-    value: '',
-    label: 'Select Tax Year',
-};
 
 export interface OnSubmitArgs {
     grossIncome: string;
@@ -36,9 +29,6 @@ export const TaxCalculatorForm: React.FC<TaxCalculatorFormProps> = ({
 }) => {
     const incomeRef = React.useRef<HTMLInputElement>(null);
     const taxYearRef = React.useRef<HTMLInputElement>(null);
-    // const taxYearRef = React.useRef<HTMLSelectElement>(null);
-
-    const options = [PLACEHOLDER_OPTION, ...TAX_YEAR_OPTIONS];
 
     const onSubmitHandler: FormEventHandler<HTMLFormElement> = (
         e: FormEvent<HTMLFormElement>
@@ -75,7 +65,6 @@ export const TaxCalculatorForm: React.FC<TaxCalculatorFormProps> = ({
                 placeholder="Enter tax year"
                 ref={taxYearRef}
             />
-            {/* <SelectInput label="Tax Year" options={options} name="taxYear" ref={taxYearRef}/> */}
             <input type="submit" value="Calculate" />
             <input type="reset" value="Reset" />
         </Form>

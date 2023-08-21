@@ -8,12 +8,6 @@ export interface TaxRatesResponse {
     tax_brackets: TaxBracket[];
 }
 
-interface Error {
-    code: string;
-    message: string;
-    field: string;
-}
-
 export type TaxRatesJSONResponse = Partial<TaxRatesResponse> & {
     errors: Error[];
 };

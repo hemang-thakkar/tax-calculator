@@ -3,7 +3,14 @@ import { LoadedState, TaxRatesResponse } from '../../data/model';
 import { OnSubmitArgs } from './TaxCalculatorForm';
 import { fetchTaxRates } from '../../data/api';
 
-export function useTaxCalculatorForm() {
+export interface UseTaxCalculatorFormReturnType {
+    taxRatesState: LoadedState<TaxRatesResponse>;
+    grossIncome: number;
+    onFormSubmit: (args: OnSubmitArgs) => void;
+    onFormReset: () => void;
+}
+
+export function useTaxCalculatorForm(): UseTaxCalculatorFormReturnType {
     const [taxRatesState, setTaxRatesState] = React.useState<
         LoadedState<TaxRatesResponse>
     >({ status: 'NONE' });

@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const resolvePath = (segment) => resolve(__dirname, segment);
 module.exports = {
     target: 'web',
-    mode: 'development',
+    mode: process.env.NODE_ENV ?? "development",
     entry: './src/index.tsx',
     output: {
-        path: resolvePath('build'),
+        path: resolvePath('dist'),
         filename: '[name].[hash:8].js',
     },
     module: {

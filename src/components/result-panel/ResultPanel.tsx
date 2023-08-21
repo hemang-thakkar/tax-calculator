@@ -3,7 +3,7 @@ import { LoadedState, TaxRatesResponse } from '../../data/model';
 import styled from '@emotion/styled';
 import { ResultSummary } from './ResultSummary';
 
-interface ResultPanelProps {
+export interface ResultPanelProps {
     grossIncome: number;
     taxRatesState: LoadedState<TaxRatesResponse>;
 }

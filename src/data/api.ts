@@ -1,6 +1,6 @@
 import { TaxRatesJSONResponse, TaxRatesResponse } from './model';
 
-const BASE_URL = 'http://localhost:5000/tax-calculator';
+export const BASE_URL = 'http://localhost:5000/tax-calculator';
 
 export const fetchTaxRates = async (
     taxYear: string

@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react';
-import { TaxBracket, TaxRatesResponse } from '../../data/model';
+import React from 'react';
+import { TaxRatesResponse } from '../../data/model';
 import styled from '@emotion/styled';
 import {
     calculateAverageTaxRate,
@@ -11,7 +11,7 @@ import {
 import { TaxBand } from './TaxBand';
 import { RowDisplay } from './RowDisplay';
 
-interface ResultSummaryProps {
+export interface ResultSummaryProps {
     taxRatesResponse: TaxRatesResponse;
     grossIncome: number;
 }
@@ -46,7 +46,7 @@ export const ResultSummary: React.FC<ResultSummaryProps> = ({
             <Header>Tax Summary</Header>
             {appliedTaxBrackets.length > 0 && <hr />}
             {appliedTaxBrackets.map((tb, index) => (
-                <TaxBand key={index} {...tb} />
+                <TaxBand testId="tax-bands" key={index} {...tb} />
             ))}
             <hr />
             <RowDisplay title="Total Tax" value={formatter.format(totalTax)} />
