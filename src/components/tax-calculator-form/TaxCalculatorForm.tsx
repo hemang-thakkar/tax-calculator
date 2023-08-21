@@ -53,7 +53,7 @@ export const TaxCalculatorForm: React.FC<TaxCalculatorFormProps> = ({
                 type="number"
                 label="Gross Income"
                 name="grossIncome"
-                placeholder="Enter gross income"
+                placeholder="Enter annual income"
                 ref={incomeRef}
             />
             <TextInput
